@@ -1,0 +1,96 @@
+.body {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+//header
+.up_blackbar {
+    display: flex;
+    align-items: center;
+    width: 1440px;
+    height: 91px;
+    border: rgb(0, 0, 0) solid 1px;
+    background-color: black;
+    padding: 0 28px;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+
+    &__logo {
+        width: 178px;
+        height: 60.93px;
+    }
+
+    &__nav {
+        width: 100%;
+    }
+
+    &__ul {
+        display: flex;
+        list-style-type: none;
+        justify-content: space-around;
+        width: 100%;
+    }
+
+    &__link {
+        text-decoration: none;
+        color: #ffff;
+        font-size: 24px;
+        line-height: 24px;
+    }
+}
+
+
+//sidebar
+.left_blackbar {
+    width: 117px;
+    height: 1024px;
+    background-color: black;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    color: #ffff;
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
+
+    &__text {
+        transform: rotate(270deg);
+        width: 138px;
+        height: 24px;
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 12px;
+        margin: 0;
+        position: absolute;
+        bottom: 15px;
+    }
+
+    &__nav {
+        display: flex;
+        width: 64px;
+        height: 316px;
+        position: absolute;
+        top: 35%;
+
+    }
+
+    &__ul {
+        display: flex;
+        list-style-type: none;
+        justify-content: space-around;
+        flex-direction: column;
+        padding: 0;
+    }
+
+    &__btn {
+        width: 64px;
+        height: 64px;
+        border-radius: 6px;
+        border: none;
+        background-color: #ffff;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+    }
+}
