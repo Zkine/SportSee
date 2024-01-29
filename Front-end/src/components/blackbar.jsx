@@ -1,24 +1,15 @@
 import PropTypes from "prop-types";
 
-export default function Blackbar({
-  className,
-  children,
-  classNameNav,
-  classNameUl,
-}) {
+export default function Blackbar({ className, children }) {
   return (
-    <section className={className}>
+    <div className={className}>
       {children[0]}
-      <nav className={classNameNav}>
-        <ul className={classNameUl}>{children[1]}</ul>
-      </nav>
-    </section>
+      {children[1]}
+    </div>
   );
 }
 
 Blackbar.propTypes = {
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
   className: PropTypes.string.isRequired,
-  classNameNav: PropTypes.string.isRequired,
-  classNameUl: PropTypes.string.isRequired,
 };

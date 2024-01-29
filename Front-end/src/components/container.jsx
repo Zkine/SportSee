@@ -1,9 +1,9 @@
 import PropTypes from "prop-types";
 
 export default function Container({ className, children }) {
-  return <div className={className}>{children}</div>;
+  return <article className={className}>{children}</article>;
 }
 Container.propTypes = {
   className: PropTypes.string.isRequired,
-  children: PropTypes.node,
+  children: PropTypes.node.isRequired,
 };
