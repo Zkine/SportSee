@@ -36,14 +36,14 @@ export default function Profil() {
 
   return (
     <>
-      <header>
-        <Blackbar className="up_blackbar">
-          <img src={Logo} alt="logo SportSee" className="up_blackbar__logo" />
+      <header className="header">
+        <Blackbar>
+          <img src={Logo} alt="logo SportSee" className="header__logo" />
           {titre.map((el) => (
-            <nav className="up_blackbar__nav" key={el.id}>
-              <ul className="up_blackbar__ul">
+            <nav className="header__nav" key={el.id}>
+              <ul className="header__ul">
                 <li>
-                  <Link className="up_blackbar__link" href="#">
+                  <Link className="header__link" href="#">
                     {el.link}
                   </Link>
                 </li>
@@ -53,13 +53,15 @@ export default function Profil() {
         </Blackbar>
       </header>
       <main>
-        <aside>
-          <Blackbar className="left_blackbar">
-            <p className="left_blackbar__text">Copyright, SportSee 2020</p>
-            <div className="left_blackbar__div">
+        <aside className="aside">
+          <Blackbar>
+            <p className="aside__text">
+              <small className="aside__small">Copyright, SportSee 2020</small>
+            </p>
+            <div className="aside__div">
               {iconeLeftBar.map((el) => (
                 <div key={el.id}>
-                  <Button className="left_blackbar__btn">
+                  <Button className="aside__btn">
                     <img src={el.src} alt={el.alt} />
                   </Button>
                 </div>

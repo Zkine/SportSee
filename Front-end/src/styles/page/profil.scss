@@ -5,7 +5,7 @@
 }
 
 //header
-.up_blackbar {
+.header {
     display: flex;
     align-items: center;
     width: 100vw;
@@ -41,7 +41,10 @@
 
 
 //sidebar
-.left_blackbar {
+.aside {
+    display: flex;
+    flex-direction: column-reverse;
+    align-items: center;
     width: 117px;
     height: 100vh;
     background-color: black;
@@ -49,29 +52,28 @@
     top: 0;
     z-index: -1;
     color: #ffff;
-    display: flex;
-    flex-direction: column-reverse;
-    align-items: center;
 
     &__text {
-        transform: rotate(270deg);
+        display: flex;
+        align-items: center;
         width: 138px;
         height: 24px;
+        margin-bottom: 100px;
+        transform: rotate(270deg);
+        position: absolute;
+    }
+
+    &__small {
         font-size: 0.75em;
         font-weight: 500;
         line-height: 0.75em;
-        margin: 0;
-        margin-bottom: 100px;
-        bottom: 100px;
-        display: flex;
-        align-items: center;
     }
 
     &__div {
         display: flex;
         width: 64px;
         height: 316px;
-        margin: 170px auto;
+        margin: auto;
         justify-content: space-around;
         flex-direction: column;
     }
@@ -91,7 +93,11 @@
 
 //Section
 .title_container {
-    margin: 38px 0 0 11.667%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: 4.376% 0 0 15.556%;
+    height: 110px;
 
     &__h {
         font-size: 3em;
@@ -104,16 +110,19 @@
         font-size: 1.125em;
         font-weight: 400;
         line-height: 1.5em;
+        margin: 0;
     }
 }
 
 // Dashboard
 .dashboard {
     display: grid;
-    margin: 0px 0 0 11.667%;
-    grid-template-columns: repeat(4, 21%);
-    grid-auto-rows: 160px 160px auto;
-    gap: 30px;
+    margin: 4.237% 0 0 15.556%;
+    grid-template-columns: repeat(4, 23%);
+    grid-auto-rows: 23% 23% auto;
+    gap: 2.6%;
+    width: 78.195%;
+    height: 59.864vh;
 
 }
 
@@ -122,30 +131,32 @@
     grid-column: 1 / 4;
     grid-row: 1 / 3;
     border-radius: 5px;
-
+    border: 2px black solid;
 }
 
 .session_duration {
-    background-color: #FF0000;
+    // background-color: #FF0000;
     grid-row: 3 / 5;
-    height: 263px;
-    row-gap: 28px;
+    height: 98.518%;
     align-self: end;
     border-radius: 5px;
+    border: 2px black solid;
 }
 
 .radar_chart {
     grid-row: 3 / 5;
-    height: 263px;
+    height: 98.518%;
     align-self: end;
     border-radius: 5px;
+    border: 2px black solid;
 }
 
 .score {
     grid-row: 3 / 5;
-    height: 263px;
+    height: 98.518%;
     align-self: end;
     border-radius: 5px;
+    border: 2px black solid;
 }
 
 .container_macronutrient {
@@ -155,7 +166,8 @@
     justify-content: space-between;
 
     &--item {
-        height: 124px;
+        height: 20.882%;
         border-radius: 5px;
+        border: 2px black solid;
     }
 }
