@@ -1,0 +1,20 @@
+.length {
+    opacity: 50.4%;
+    position: absolute;
+    top: 11.03%;
+    left: 13.39%;
+    width: 135px;
+
+    &__title {
+        margin: 0;
+        font-weight: 500;
+        font-size: 0.938em;
+        color: #FFFFFF;
+    }
+}
+
+.session_duration .recharts-wrapper .xAxis>.recharts-cartesian-axis-ticks>.recharts-layer>.recharts-text {
+    fill: #FFFFFF;
+    font-weight: 500;
+    font-size: 0.75em;
+}

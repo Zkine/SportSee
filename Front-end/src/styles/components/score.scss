@@ -1,0 +1,29 @@
+.div_score {
+
+    &__title {
+        font-size: 0.938em;
+        margin: 9.303% 0 0 11.63%;
+    }
+
+    &+.recharts-wrapper {
+        height: 85% !important;
+        padding: 15px 10px 15px 10px;
+    }
+
+    &__pourcent {
+        font-weight: 700;
+        font-size: 1.625em;
+        line-height: 1.625em;
+        color: #282D30;
+    }
+
+    &__text {
+        font-weight: 500;
+        font-size: 1em;
+        color: #74798C;
+    }
+
+    .recharts-pie {
+        height: 30px;
+    }
+}

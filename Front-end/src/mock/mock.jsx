@@ -11,6 +11,12 @@ export default function Api(userId) {
   const userData = DataBase.filter(
     (el) => el.id === userId || el.userId === userId
   );
-  const value = Modelisation.getmodel(userData);
-  return value;
+  const value = new Modelisation(userData);
+  const firstName = value._firstName;
+  const activity = value._array;
+  const sessions = value._sessionData;
+  const performace = value._perfData;
+  const score = value._score;
+
+  return { firstName, activity, sessions, performace, score };
 }

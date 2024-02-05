@@ -1,3 +1,43 @@
+.text {
+    display: flex;
+    justify-content: space-between;
+
+    &__title {
+        font-size: 0.938em;
+        margin: 2.882% 0 0 2.882%;
+        line-height: 1.5em;
+        font-weight: 500;
+    }
+
+    &__div {
+        margin: 2.882% 2.882% 0 0;
+    }
+
+    &__ul {
+        margin: 0;
+        display: flex;
+        justify-content: space-between;
+        width: 280px;
+        align-items: start;
+    }
+
+    &__li:nth-child(1)::marker {
+        color: #E60000;
+    }
+
+    &__li:nth-child(2)::marker {
+        color: #282D30;
+    }
+
+    &__p {
+        margin: 0;
+        color: #74798C;
+        font-weight: 500;
+        font-size: 0.875em;
+        line-height: 1.5em;
+    }
+}
+
 .recharts-cartesian-grid-vertical {
     display: none;
 }
@@ -5,10 +45,6 @@
 .recharts-default-tooltip {
     background-color: #E60000 !important;
     border: none !important;
-}
-
-.recharts-tooltip-label {
-    display: none;
 }
 
 .recharts-tooltip-item {
@@ -19,10 +55,6 @@
     display: none;
 }
 
-.recharts-surface {
-    width: auto !important;
-}
-
-.recharts-rectanglerecharts-toolip-cursor {
-    color: #ffff !important;
+.recharts-tooltip-label {
+    display: none;
 }
