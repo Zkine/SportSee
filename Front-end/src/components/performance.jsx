@@ -1,10 +1,10 @@
 import {
   Radar,
+  Text,
   RadarChart,
   PolarGrid,
   PolarAngleAxis,
   ResponsiveContainer,
-  Text,
 } from "recharts";
 function renderPolarAngleAxis({ payload, x, y, cx, cy, ...rest }) {
   return (

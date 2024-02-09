@@ -9,12 +9,12 @@
         margin: 0;
         font-weight: 500;
         font-size: 0.938em;
-        color: #FFFFFF;
+        color: $white-color;
     }
 }
 
 .session_duration .recharts-wrapper .xAxis>.recharts-cartesian-axis-ticks>.recharts-layer>.recharts-text {
-    fill: #FFFFFF;
+    fill: $white-color;
     font-weight: 500;
     font-size: 0.75em;
 }

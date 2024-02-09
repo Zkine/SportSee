@@ -1,7 +1,7 @@
 import { Data } from "../data_mock/data.js";
 import Modelisation from "../components/modelisation.jsx";
 
-export default function Api(userId) {
+export default function Mock(userId) {
   const DataBase = [
     ...Data.USER_MAIN_DATA,
     ...Data.USER_ACTIVITY,
@@ -12,11 +12,16 @@ export default function Api(userId) {
     (el) => el.id === userId || el.userId === userId
   );
   const value = new Modelisation(userData);
-  const firstName = value._firstName;
-  const activity = value._array;
-  const sessions = value._sessionData;
-  const performace = value._perfData;
-  const score = value._score;
 
-  return { firstName, activity, sessions, performace, score };
+  return {
+    firstName: value._firstName,
+    activity: value._activity,
+    sessions: value._sessionData,
+    performace: value._perfData,
+    score: value._score,
+    calories: value._calories,
+    proteins: value._proteins,
+    carbohydrates: value._carbohydrates,
+    lipids: value._lipids,
+  };
 }

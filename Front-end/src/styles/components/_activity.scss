@@ -22,16 +22,16 @@
     }
 
     &__li:nth-child(1)::marker {
-        color: #E60000;
+        color: $red-color;
     }
 
     &__li:nth-child(2)::marker {
-        color: #282D30;
+        color: $gray-color;
     }
 
     &__p {
         margin: 0;
-        color: #74798C;
+        color: $gray-light-color;
         font-weight: 500;
         font-size: 0.875em;
         line-height: 1.5em;
@@ -43,12 +43,12 @@
 }
 
 .recharts-default-tooltip {
-    background-color: #E60000 !important;
+    background-color: $red-color !important;
     border: none !important;
 }
 
 .recharts-tooltip-item {
-    color: #ffff !important;
+    color: $white-color !important;
 }
 
 .recharts-cartesian-axis-tick-line {

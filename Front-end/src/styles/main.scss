@@ -1,7 +1,10 @@
 @import "node_modules/normalize-scss/sass/normalize/import-now";
 @import "./base/police";
 @import "./base/box-sizing";
-@import "./page/profil.scss";
-@import "./components/activity.scss";
-@import "./components/averagelength.scss";
-@import "./components/score.scss";
+@import "./utils/variable";
+@import "./utils/mixins";
+@import "./page/profil";
+@import "./components/option";
+@import "./components/activity";
+@import "./components/averagelength";
+@import "./components/score";

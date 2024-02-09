@@ -37,6 +37,7 @@ class AverageOfSessions extends Performance {
     this._sessionData = [...Data[2].sessions];
     this.session(this._sessionData);
   }
+
   session = (myArray) => {
     myArray.map((e) => {
       if (e.day === 1) {
@@ -64,9 +65,9 @@ class Activity extends AverageOfSessions {
   constructor(Data) {
     super(Data);
     this._value = [...Data[1].sessions];
-    this._array = this.transform(this._value);
-    this._axis = this.dataAxis(this._array);
-    this._array.push(this._axis);
+    this._activity = this.transform(this._value);
+    this._axis = this.dataAxis(this._activity);
+    this._activity.push(this._axis);
   }
 
   transform = (myArray) => {
@@ -89,7 +90,6 @@ class Activity extends AverageOfSessions {
     let summ = 0;
     array.map((e) => (summ = summ + e));
     const moyenneweight = summ / array.length;
-
     return {
       maxweight: maxweight,
       miniweight: miniweight,
@@ -103,15 +103,27 @@ class MainData extends Activity {
     super(Data);
     this._firstName = Data[0].userInfos.firstName;
     this._score = this.score(Data);
+    this._calories = this.numberFormat(Data[0].keyData.calorieCount);
+    this._proteins = Data[0].keyData.proteinCount;
+    this._carbohydrates = Data[0].keyData.carbohydrateCount;
+    this._lipids = Data[0].keyData.lipidCount;
   }
 
   score = (Data) => {
-    const score = Data[0].todayScore ? Data[0].todayScore : Data[0].score;
+    const score = Data[0].todayScore || Data[0].score;
 
     return [
       { name: "score", value: score * 100 },
       { name: "score restant", value: 100 - score * 100 },
     ];
+  };
+
+  numberFormat = (value) => {
+    value = new Intl.NumberFormat("en-IN", {
+      maximumSignificantDigits: 3,
+    }).format(value);
+
+    return value;
   };
 }
 
