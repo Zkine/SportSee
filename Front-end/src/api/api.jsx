@@ -3,7 +3,7 @@ import Modelisation from "../components/modelisation.jsx";
 
 const urlApi = "http://localhost:3000";
 
-export default async function getUser(userId) {
+export default async function Api(userId) {
   if (userId) {
     try {
       const responseData = await axios.get(`${urlApi}/user/${userId}`);
@@ -35,8 +35,8 @@ export default async function getUser(userId) {
         lipids: value._lipids,
       };
     } catch (error) {
-      throw new Error("Error fetching user data", error);
+      return console.log("Error fetching user data", error), null;
     }
   }
+  return {};
 }
-getUser();

@@ -23,10 +23,10 @@
 }
 
 .remove {
-    background: rgba(0, 0, 0, 0);
+    background: $black-color;
     opacity: 0;
     border: none;
-    clip-path: rect(0);
+    clip-path: circle(0);
     height: 1px;
     margin: -1px;
     overflow: hidden;

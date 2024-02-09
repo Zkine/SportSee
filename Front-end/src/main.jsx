@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./styles/main.scss";
 import Profil from "./page/profil";
-import ErrorPage from "./page/error-page";
+import ErrorPage from "./page/error-profil";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
 const router = createBrowserRouter([

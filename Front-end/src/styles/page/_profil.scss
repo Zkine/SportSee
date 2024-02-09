@@ -209,3 +209,17 @@
         color: $gray-light-color;
     }
 }
+
+.data_erreur {
+    position: absolute;
+    top: 25vw;
+    right: 45vh;
+    width: 300px;
+    height: 300px;
+    border-radius: 10%;
+    background-color: #FBFBFB;
+    border: #282D30 2px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

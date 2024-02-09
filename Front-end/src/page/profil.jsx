@@ -1,6 +1,4 @@
 import { useEffect, useState, useRef } from "react";
-import Mock from "../mock/mock";
-import Api from "../api/api";
 import Blackbar from "../components/blackbar";
 import Option from "../components/option";
 import Button from "../components/button";
@@ -10,106 +8,77 @@ import AverageLength from "../components/averagelength";
 import Performance from "../components/performance";
 import Score from "../components/score";
 import Logo from "../assets/logo_sportsee.svg";
-import Meditation from "../assets/meditation.svg";
-import Swimmer from "../assets/swimmer.svg";
-import Bike from "../assets/bike.svg";
-import Weight from "../assets/weight.svg";
-import Calories from "../assets/calories.svg";
-import Proteines from "../assets/proteines.svg";
-import Glucides from "../assets/glucides.svg";
-import Lipides from "../assets/lipides.svg";
+import { titre, iconeAside, iconeMain } from "./data-profil";
 import { Link } from "react-router-dom";
+import Mock from "../mock/mock";
+import Api from "../api/api";
 
 export default function Profil() {
   const refProfil = useRef(null);
   const refReglage = useRef(null);
+  const refError = useRef(null);
   const [userId, setUserId] = useState(12);
-  const [userData, setUserData] = useState();
+  const [userData, setUserData] = useState(0);
   const [optionData, setoptionData] = useState("");
+
+  if (userData) {
+    iconeMain[0].value = userData.calories + "kCal";
+    iconeMain[1].value = userData.proteins + "g";
+    iconeMain[2].value = userData.proteins + "g";
+    iconeMain[3].value = userData.proteins + "g";
+  }
+
+  function errorApi() {
+    refError.current.classList.remove("remove");
+    setTimeout(function () {
+      refError.current.classList.add("remove");
+    }, 4000);
+  }
 
   useEffect(() => {
     document.title = "SportSee";
     async function startFetching() {
       if (optionData === "" || optionData === "mock") {
         const value = Mock(userId);
-        setUserData(value);
+        return setUserData(value);
       } else {
         const value = await Api(userId);
-        setUserData(value);
+        if (value) {
+          return setUserData(value);
+        } else {
+          errorApi();
+        }
       }
     }
     startFetching();
   }, [optionData, userId]);
 
-  const titre = [
-    { id: "1ti", link: "Accueil" },
-    { id: "2ti", link: "Profil" },
-    { id: "3ti", link: "Réglage" },
-    { id: "4ti", link: "Communauté" },
-  ];
-
-  const iconeAside = [
-    { id: "1ic", src: Meditation, alt: "icône d'une personne qui médite" },
-    { id: "2ic", src: Swimmer, alt: "icône d'une personne qui nage" },
-    { id: "3ic", src: Bike, alt: "icône d'un cycliste" },
-    { id: "4ic", src: Weight, alt: "icone d'un poids de musculation" },
-  ];
-
-  const iconeMain = [
-    {
-      id: "5ic",
-      src: Calories,
-      alt: "icône d'une flamme de couleur rouge",
-      value: userData !== undefined && userData.calories + "kCal",
-      categorie: "Calories",
-    },
-    {
-      id: "6ic",
-      src: Proteines,
-      alt: "icône d'un morceau de viande de couleur bleue",
-      value: userData !== undefined && userData.proteins + "g",
-      categorie: "Protéines",
-    },
-    {
-      id: "7ic",
-      src: Glucides,
-      alt: "icône d'une pomme de couleur jaune",
-      value: userData !== undefined && userData.carbohydrates + "g",
-      categorie: "Glucides",
-    },
-    {
-      id: "8ic",
-      src: Lipides,
-      alt: "icône d'un hamburger de couleur rose",
-      value: userData !== undefined && userData.lipids + "g",
-      categorie: "Lipides",
-    },
-  ];
-
   function handleClick(e) {
-    e.target.textContent === "Profil" &&
-      refProfil.current.classList.remove("remove");
-    e.target.textContent === "Réglage" &&
-      refReglage.current.classList.remove("remove");
+    return e.target.textContent === "Profil"
+      ? refProfil.current.classList.remove("remove")
+      : e.target.textContent === "Réglage" &&
+          refReglage.current.classList.remove("remove");
   }
 
   const handleSubmitProfil = (e) => {
     e.preventDefault();
-
     if (e.currentTarget[0].checked === true) {
-      refProfil.current.classList.add("remove");
-      refReglage.current.classList.add("remove");
-      return setUserId(Number(e.currentTarget[0].getAttribute("value")));
+      return (
+        refProfil.current.classList.add("remove"),
+        refReglage.current.classList.add("remove"),
+        setUserId(Number(e.currentTarget[0].getAttribute("value")))
+      );
     } else if (e.currentTarget[1].checked === true) {
-      refProfil.current.classList.add("remove");
-      refReglage.current.classList.add("remove");
-      return setUserId(Number(e.currentTarget[1].getAttribute("value")));
+      return (
+        refProfil.current.classList.add("remove"),
+        refReglage.current.classList.add("remove"),
+        setUserId(Number(e.currentTarget[1].getAttribute("value")))
+      );
     }
   };
 
   const handleSubmitReglage = (e) => {
     e.preventDefault();
-
     if (e.currentTarget[0].checked === true) {
       refProfil.current.classList.add("remove");
       refReglage.current.classList.add("remove");
@@ -120,6 +89,7 @@ export default function Profil() {
       return setoptionData(e.currentTarget[1].getAttribute("value"));
     }
   };
+
   return (
     userData && (
       <>
@@ -138,7 +108,6 @@ export default function Profil() {
               </ul>
             </nav>
           </Blackbar>
-
           <Option
             onSubmit={handleSubmitProfil}
             ref={refProfil}
@@ -153,7 +122,7 @@ export default function Profil() {
             value1={"mock"}
             value2={"api"}
           >
-            {"Données-Mockées"}requette Api
+            {"Mock"}Api
           </Option>
         </header>
         <main>
@@ -216,6 +185,9 @@ export default function Profil() {
                       </div>
                     </Article>
                   ))}
+                </div>
+                <div ref={refError} className="data_erreur remove">
+                  <p>Le serveur ne répond pas !!!</p>
                 </div>
               </div>
             </>
