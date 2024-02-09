@@ -24,8 +24,8 @@ export default function Profil() {
   if (userData) {
     iconeMain[0].value = userData.calories + "kCal";
     iconeMain[1].value = userData.proteins + "g";
-    iconeMain[2].value = userData.proteins + "g";
-    iconeMain[3].value = userData.proteins + "g";
+    iconeMain[2].value = userData.carbohydrates + "g";
+    iconeMain[3].value = userData.lipids + "g";
   }
 
   function errorApi() {
