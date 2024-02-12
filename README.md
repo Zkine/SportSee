@@ -12,6 +12,6 @@ Lancer le font-end: npm run dev
 
 Contrainte:  
 L'application doit être affichée en 1024 par 780 pixels.  
-Ouvir le dev tool : clique droit de la souris puis Inspecter.  
-Activer la barre d'outils en cliquant sur l'icône représenttant un ordinateur.
+Ouvrir le dev tool : clique droit de la souris puis Inspecter.  
+Activer la barre d'outils en cliquant sur l'icône représentant un ordinateur.
 La barre horizontale à gauche de l'icône vous permet de saisir la résolution ci-dessus.

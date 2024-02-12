@@ -31,7 +31,7 @@ export default function Profil() {
   function errorApi() {
     refError.current.classList.remove("remove");
     setTimeout(function () {
-      refError.current.classList.add("remove");
+      return refError.current.classList.add("remove");
     }, 4000);
   }
 
@@ -80,13 +80,17 @@ export default function Profil() {
   const handleSubmitReglage = (e) => {
     e.preventDefault();
     if (e.currentTarget[0].checked === true) {
-      refProfil.current.classList.add("remove");
-      refReglage.current.classList.add("remove");
-      return setoptionData(e.currentTarget[0].getAttribute("value"));
+      return (
+        refProfil.current.classList.add("remove"),
+        refReglage.current.classList.add("remove"),
+        setoptionData(e.currentTarget[0].getAttribute("value"))
+      );
     } else if (e.currentTarget[1].checked === true) {
-      refProfil.current.classList.add("remove");
-      refReglage.current.classList.add("remove");
-      return setoptionData(e.currentTarget[1].getAttribute("value"));
+      return (
+        refProfil.current.classList.add("remove"),
+        refReglage.current.classList.add("remove"),
+        setoptionData(e.currentTarget[1].getAttribute("value"))
+      );
     }
   };
 
@@ -111,6 +115,8 @@ export default function Profil() {
           <Option
             onSubmit={handleSubmitProfil}
             ref={refProfil}
+            name1={"Karl"}
+            name2={"Cecilia"}
             value1={"12"}
             value2={"18"}
           >
@@ -119,6 +125,8 @@ export default function Profil() {
           <Option
             onSubmit={handleSubmitReglage}
             ref={refReglage}
+            name1={"mock"}
+            name2={"api"}
             value1={"mock"}
             value2={"api"}
           >

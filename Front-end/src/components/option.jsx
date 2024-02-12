@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import { forwardRef } from "react";
 const Option = forwardRef(function Option(
-  { children, onSubmit, value1, value2 },
+  { children, onSubmit, name1, name2, value1, value2 },
   ref
 ) {
   return (
@@ -9,11 +9,11 @@ const Option = forwardRef(function Option(
       <form method="" onSubmit={onSubmit}>
         <p className="option__p">
           <label>
-            <input type="radio" name="myRadio" value={value1} />
+            <input type="radio" name={name1} value={value1} />
             {children[0]}
           </label>
           <label>
-            <input type="radio" name="myRadio" value={value2} />
+            <input type="radio" name={name2} value={value2} />
             {children[1]}
           </label>
         </p>
@@ -31,4 +31,6 @@ Option.propTypes = {
   onSubmit: PropTypes.func.isRequired,
   value1: PropTypes.string.isRequired,
   value2: PropTypes.string.isRequired,
+  name1: PropTypes.string.isRequired,
+  name2: PropTypes.string.isRequired,
 };
