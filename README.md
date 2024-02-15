@@ -18,4 +18,4 @@ La barre horizontale à gauche de l'icône vous permet de saisir la résolution 
 
 Utilisation:
 En cliquant sur Réglage, vous avez la possibilité de choisir entre le mock des données ou l'Api.  
-En cliquant sur Profil, vous avez la possibilité de choisir entre le karl et Cecilia.
+En cliquant sur Profil, vous avez la possibilité de choisir entre karl et Cecilia.
