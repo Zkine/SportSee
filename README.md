@@ -15,3 +15,7 @@ L'application doit être affichée en 1024 par 780 pixels.
 Ouvrir le dev tool : clique droit de la souris puis Inspecter.  
 Activer la barre d'outils en cliquant sur l'icône représentant un ordinateur.
 La barre horizontale à gauche de l'icône vous permet de saisir la résolution ci-dessus.
+
+Utilisation:
+En cliquant sur Réglage, vous avez la possibilité de choisir entre le mock des données ou l'Api.  
+En cliquant sur Profil, vous avez la possibilité de choisir entre le karl et Cecilia.
