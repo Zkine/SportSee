@@ -115,8 +115,8 @@ export default function Profil() {
           <Option
             onSubmit={handleSubmitProfil}
             ref={refProfil}
-            name1={"Karl"}
-            name2={"Cecilia"}
+            name1={"profil"}
+            name2={"profil"}
             value1={"12"}
             value2={"18"}
           >
@@ -125,8 +125,8 @@ export default function Profil() {
           <Option
             onSubmit={handleSubmitReglage}
             ref={refReglage}
-            name1={"mock"}
-            name2={"api"}
+            name1={"reglage"}
+            name2={"reglage"}
             value1={"mock"}
             value2={"api"}
           >
